@@ -1,0 +1,22 @@
+<h1>Editing message</h1>
+<%= form_with(model: @message) do |form| %>
+  <%= render "inline_fields", form: form, attribute: :name do %>
+    <div>
+      <%= form.label :name, style: "display: block" %>
+      <%= form.text_field :name %>
+    </div>
+  <% end %>
+  <%= render "inline_fields", form: form, attribute: :content do%>
+    <div>
+      <%= form.label :content, style: "display: block" %>
+      <%= form.text_field :content %>
+    </div>
+  <% end %>
+  <br>
+  <div>
+    <%= link_to "Edit this message", edit_message_path(@message) %> |
+    <%= link_to "Back to messages", messages_path() %>
+  </div>
+<% end %>
+
+ 
